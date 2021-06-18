@@ -5,7 +5,7 @@ from api.petstore.petstore_funcs import create_random_user
 from core.utils import random_string
 
 
-def test_get_user__user_ixists__fields_are_same_as_on_creation__200():
+def test_get_user__user_exists__fields_are_same_as_on_creation__200():
     with allure.step('Arrange:'):
         user = create_random_user()
         request_user_create(user=user)
