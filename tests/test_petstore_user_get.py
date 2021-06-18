@@ -1,6 +1,6 @@
 import allure
 
-from api.petstore.petstore_api import request_user_get, request_user_create
+from api.petstore.petstore_api import request_user_get
 from api.petstore.petstore_funcs import create_random_user
 from core.utils import random_string
 
@@ -8,7 +8,6 @@ from core.utils import random_string
 def test_get_user__user_exists__fields_are_same_as_on_creation__200():
     with allure.step('Arrange:'):
         user = create_random_user()
-        request_user_create(user=user)
 
     with allure.step('Act:'):
         response = request_user_get(username=user.username)
