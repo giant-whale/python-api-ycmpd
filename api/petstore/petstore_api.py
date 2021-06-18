@@ -14,8 +14,9 @@ def request_user_create(user: User):
     return response
 
 
-def request_user_get(user: User):
-    pass
+def request_user_get(username: str):
+    response = make_request(method='GET', url=BASE_URL + f'v2/user/{username}')
+    return response
 
 
 def request_user_update(user: User):
