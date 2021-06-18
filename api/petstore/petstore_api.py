@@ -10,7 +10,7 @@ def request_user_create(user: User):
     response = make_request(method='POST', url=BASE_URL+'v2/user', json=body)
     if user.id is None:
         response_json = response.json()
-        user.id = response_json['message']
+        user.id = int(response_json['message'])
     return response
 
 
