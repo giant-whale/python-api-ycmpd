@@ -1,16 +1,6 @@
 # swagger — https://petstore.swagger.io/#/user
 
 class User:
-    id = int
-    """Do not use to generate new ID"""
-    username = str
-    firstName = str
-    lastName = str
-    email = str
-    password = str
-    phone = str
-    userStatus = int
-
     def __init__(
             self,
             id: int = None,
@@ -22,6 +12,11 @@ class User:
             phone: str = None,
             userStatus: int = None
     ):
+        """
+        :param id: int64, do not fill to generate new; must be unique
+        :param username: must be unique
+        :param userStatus: int32
+        """
         self.id = id
         self.username = username
         self.firstName = firstName
