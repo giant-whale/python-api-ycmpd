@@ -9,6 +9,7 @@ import time
 BASE_URL = 'https://petstore.swagger.io/'
 
 
+@allure.step('Creating User')
 def request_user_create(user: User):
     body = user.get_user()
     response = make_request(method='POST', url=BASE_URL+'v2/user', json=body)
@@ -20,11 +21,13 @@ def request_user_create(user: User):
     return response
 
 
+@allure.step('Getting User')
 def request_user_get(username: str):
     response = make_request(method='GET', url=BASE_URL + f'v2/user/{username}')
     return response
 
 
+@allure.step('Updating User')
 def request_user_update(username: str, updated_user: User):
     body = updated_user.get_user()
     response = make_request(method='PUT', url=BASE_URL + f'v2/user/{username}', json=body)
@@ -33,6 +36,7 @@ def request_user_update(username: str, updated_user: User):
     return response
 
 
+@allure.step('Deleting User')
 def request_user_delete(username: str):
     response = make_request(method='DELETE', url=BASE_URL + f'v2/user/{username}')
     with allure.step('Waiting for changes after user was deleted'):
