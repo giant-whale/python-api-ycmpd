@@ -14,4 +14,4 @@ Run tests:
 - Single-thread — execute command `pytest tests/` to run all tests in 1 thread.
 
 Run tests and generate report:
-- Execute command `pytest tests/ --alluredir=./allure_results` to run all tests and generate Allure report files in directory `./allure_reports`. To run human-readable Allure report, execute command from the same directory `allure serve ./allure_results`.    
+- Execute command `pytest tests/ --alluredir=./allure_results` to run all tests and generate Allure report files in directory `./allure_results`. To run human-readable Allure report, execute command from the same directory `allure serve ./allure_results`.    
